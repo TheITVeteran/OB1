@@ -172,7 +172,7 @@ The `content_scripts` entries for `claude.ai`, `chatgpt.com`, and `gemini.google
 
 **Status: future work.** This contribution is currently distributed as an unpacked/developer-mode install. To publish to the Chrome Web Store, a maintainer will need to:
 
-1. Provide a 1.0.0-ready icon set (16/32/48/128 PNGs — see [`icons/README.md`](icons/README.md))
+1. Review the bundled branded icon set (16/32/48/128 PNGs in [`icons/`](icons/)) and refresh the artwork if needed for a 1.0.0 store listing
 2. Fill in the store listing: description, category (Productivity), screenshots, privacy policy URL
 3. Draft the **permission justifications** — the store review team requires a paragraph per declared permission. Suggested text:
    - `storage` — "Persists user-supplied Open Brain API URL, API key, and per-platform capture toggles."
@@ -223,3 +223,8 @@ Solution: Your browser doesn't have host permission for that origin. Open the Co
 This integration is a **capture source**, not an MCP server — it doesn't expose any tools to your AI. It only writes into Open Brain. The AI-facing tool count of your setup is unchanged by installing this extension.
 
 If you're weighing whether to add more MCP-exposing extensions on top, see the [MCP Tool Audit & Optimization Guide](../../docs/05-tool-audit.md) for how to keep your tool count manageable as your Open Brain grows.
+
+## Changelog
+
+- **0.5.1** — Added the branded icon set (16/32/48/128 PNGs); the toolbar button now shows the Open Brain mark instead of Chrome's default puzzle-piece glyph.
+- **0.5.0** — Gemini bulk history sync, host-permission hardening, error surfacing, fingerprint dedup, retry caps, and race fixes.

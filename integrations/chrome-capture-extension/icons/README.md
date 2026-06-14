@@ -1,12 +1,10 @@
 # Icons
 
-Manifest icons are intentionally not bundled in this contribution. Chrome will show the default puzzle-piece glyph until a maintainer (or you) adds branded icons here.
+This folder bundles the Open Brain branded icon set, registered in `manifest.json` under both `icons` and `action.default_icon`:
 
-To add icons later, drop these files in this folder and register them in `manifest.json` under `icons` and `action.default_icon`:
+- `icon16.png` — 16x16
+- `icon32.png` — 32x32
+- `icon48.png` — 48x48
+- `icon128.png` — 128x128
 
-- `icon16.png`
-- `icon32.png`
-- `icon48.png`
-- `icon128.png`
-
-All four sizes must be square PNGs on a transparent background. Keep each file well under 500KB to stay within the OB1 binary-blob policy.
+All four are square RGBA PNGs on a transparent background, each well under the OB1 binary-blob policy limit. To rebrand, replace these files with same-named PNGs at the same dimensions; no manifest change is needed.
