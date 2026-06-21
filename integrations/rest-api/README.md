@@ -110,6 +110,16 @@ This function is deployed with `--no-verify-jwt`, which means
 `MCP_ACCESS_KEY` is the only authentication layer. Additional hardening
 is controlled by two env vars:
 
+### Trust model
+
+`MCP_ACCESS_KEY` is a single shared secret, and the function connects with
+the Supabase **service-role** key, which bypasses Row-Level Security. Anyone
+holding the key has full read/write access to the entire brain — this is a
+**single-tenant, self-hosted** design, not a multi-user gateway. Use a
+high-entropy key (≥32 random bytes); because rate limiting is best-effort
+(see below), key strength is the primary defense against brute force. Rotate
+by updating the `MCP_ACCESS_KEY` secret.
+
 ### CORS
 
 | Env var | Default | Notes |
